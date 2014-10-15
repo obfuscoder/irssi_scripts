@@ -6,7 +6,7 @@ This is a collection of a few scripts for the IRC client IRSSI.
 
 Script for managing downloads from XDCC bots. The script supports queuing including pausing queue items and/or retriggering the download request manually.
 
-### Commands:
+#### Commands
 
 	/xdccget queue <nickname> <number> [[-xdcc=<method>] <description>]
 
@@ -66,7 +66,7 @@ Display help.
 
 You can also simply use /x instead of /xdccget ;-)
 
-### Configuration:
+#### Configuration
 
 	xdccget_config_path
 
