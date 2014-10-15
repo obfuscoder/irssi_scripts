@@ -138,10 +138,10 @@ sub show_help() {
       previously requested and queued file while there are downloads running already. 
 
   xdccget_retry_time
-      Time in seconds between retries. Default is 7200 (10 minutes). Retries are necessary for full
+      Time in seconds between retries. Default is 900 (15 minutes). Retries are necessary for full
       offer queues of bots, bots being/becoming offline, or not getting the requested download or any
-      understandable message regarding the request. Please DO NOT set this value to less than a couple
-      minutes or risk being banned from the channels for spamming the bots.
+      understandable message regarding the request. Please DO NOT set this value to less than 300
+      (5 minutes) or risk being banned from the channels for spamming the bots.
 
   Please report bugs to https://github.com/obfuscoder/irssi_scripts/issues
 ";
