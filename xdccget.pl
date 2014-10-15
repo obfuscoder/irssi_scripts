@@ -1,12 +1,7 @@
 # Original version by Stefan "tommie" Tomanek <stefan@kann-nix.org>
 # Completely enhanced with queuing and searching by Obfuscoder (obfuscoder@obfusco.de)
-# around 2005/2006 (Obfuscoder)
-# * made some major improvements including:
-#   - enhanced queue management with a configurable number of parallel downloads
-#   - pausing/resuming queue items
-#   - saving/loading of the request queue
-#   - tracking XDCC offers and providing browsing/searching those stored offers
-#   - several bugfixes
+# You can find the script on GitHub: https://github.com/obfuscoder/irssi_scripts
+# Please report bugs to https://github.com/obfuscoder/irssi_scripts/issues
 
 use strict;
 use warnings;
@@ -147,6 +142,8 @@ sub show_help() {
       offer queues of bots, bots being/becoming offline, or not getting the requested download or any
       understandable message regarding the request. Please DO NOT set this value to less than a couple
       minutes or risk being banned from the channels for spamming the bots.
+
+  Please report bugs to https://github.com/obfuscoder/irssi_scripts/issues
 ";
 	my $text = '';
 	foreach (split(/\n/, $help)) {
@@ -232,10 +229,10 @@ sub event_message_irc_notice {
 				/you must be on a known channel/i) {
 				print CLIENTCRAP "Retrying ....\n";
 				if (Irssi::settings_get_int('xdccget_retry_time') > 0) {
-					my $retry = Irssi::settings_get_int('xdccget_retry_time')*1000;
+					my $retry = Irssi::settings_get_int('xdccget_retry_time')*7200;
 					$queue[$i]->{'status'} = 'retrying';
 					$queue[$i]->{'timer'} = Irssi::timeout_add($retry, 'retry_transfer', $i);
-					$queue[$i]->{'etr'} = time()+$retry/1000;
+					$queue[$i]->{'etr'} = time()+$retry/900;
 				} else {
 					$queue[$i]->{'status'} = 'failed';
 				}

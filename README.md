@@ -20,19 +20,19 @@ List the download queue
 
 	/xdccget list <nickname>
 
-Request the XDCC list of <nickname>
+Request the XDCC list of `nickname`
 
 	/xdccget cancel <number>
 
-Cancel the download if currently downloading, request to being removed from queue if queued by the XDCC offerer, or remove pack <number> from the download queue.
+Cancel the download if currently downloading, request to being removed from queue if queued by the XDCC offerer, or remove pack `number` from the download queue.
 
 	/xdccget pause <number>
 
-Pause pack <number> within the local queue. Resume with the `reset` command..
+Pause pack `number` within the local queue. Resume with the `reset` command..
 
 	/xdccget reset <number>
 
-Reset pack <number> so that it is unpaused and -- if download slots are still available -- triggers a download request.
+Reset pack `number` so that it is unpaused and -- if download slots are still available -- triggers a download request.
 
 	/xdccget offers [<options>] <description search pattern>
 
@@ -78,7 +78,7 @@ Maximum number of parallel downloads. Default is 2. A download request which is 
 
 	xdccget_retry_time
 
-Time in seconds between retries. Default is 7200 (10 minutes). Retries are necessary for full offer queues of bots, bots being/becoming offline, or not getting the requested download or any understandable message regarding the request. Please DO NOT set this value to less than a couple minutes or risk being banned from the channels for spamming the bots.
+Time in seconds between retries. Default is 900 (15 minutes). Retries are necessary for full offer queues of bots, bots being/becoming offline, or not getting the requested download or any understandable message regarding the request. Please DO NOT set this value to less than 300 (5 minutes) or risk being banned from the channels for spamming the bots.
 
 ## clearwin.pl
 
