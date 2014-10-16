@@ -1,5 +1,5 @@
 # Original version by Stefan "tommie" Tomanek <stefan@kann-nix.org>
-# Completely enhanced with queuing and searching by Obfuscoder (obfuscoder@obfusco.de)
+# Enhanced with max. download limits, retries, pausing, searching and other neat stuff by Obfuscoder (obfuscoder@obfusco.de)
 # You can find the script on GitHub: https://github.com/obfuscoder/irssi_scripts
 # Please report bugs to https://github.com/obfuscoder/irssi_scripts/issues
 
@@ -7,7 +7,7 @@ use strict;
 use warnings;
 
 use vars qw($VERSION %IRSSI);
-$VERSION = "20030208";
+$VERSION = "20141017";
 %IRSSI = (
 	authors     => "Stefan 'tommie' Tomanek, Obfuscoder",
 	contact     => "obfuscoder\@obfusco.de",
